@@ -28,9 +28,6 @@
       console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
     }
 
-    function postMessageToiOS(postData) {
-        window.webkit.messageHandlers.callBackHandler.postMessage(postData);
-    }
 
     var element_layer = document.getElementById('layer');
     function execDaumPostcode() {
@@ -49,7 +46,7 @@
               jibunAddress : jibunAddress,
               zonecode : data.zonecode
           };
-          window.postMessageToiOS(postData);
+          window.TestApp.setAddress(postData);
         },
         width : '100%',
         height : '100%'
