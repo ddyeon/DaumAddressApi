@@ -35,6 +35,8 @@
       new daum.Postcode({
         oncomplete: function(data) {
           var jibunAddress = ""
+          var roadAddress = ""
+          var zonecode = ""
 
           if (data.jibunAddress == "") {
             jibunAddress = data.autoJibunAddress
@@ -42,7 +44,7 @@
             jibunAddress = data.jibunAddress
           }
 
-          window.TestApp.setAddress(data.jibunAddress);
+          window.TestApp.setAddress(data.jibunAddress, data.roadAddress, data.zonecode);
         },
         width : '100%',
         height : '100%'
